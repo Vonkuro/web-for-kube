@@ -5,6 +5,7 @@ from fastapi import Depends
 from src.database import create_tables
 import src.actions as actions
 from src.database import get_db
+from typing import List
 
 app = FastAPI()
 
@@ -16,6 +17,9 @@ async def create_database():
 
 @app.post("/user", response_model=schemas.User, status_code=201)
 async def create_user(user: schemas.UserCreate, database: Session = Depends(get_db)):
+    """
+        Créer un user
+    """
     new_user= models.User(
             name=user.name,
             fullname=user.fullname,
@@ -23,3 +27,12 @@ async def create_user(user: schemas.UserCreate, database: Session = Depends(get_
     
     user = actions.create_user(new_user, database)
     return user
+
+@app.get("/user", response_model=List[schemas.User])
+async def get_users(database: Session = Depends(get_db)):
+    """
+        Retourne tous les user
+    """
+    db_users = actions.get_users(database)
+
+    return db_users

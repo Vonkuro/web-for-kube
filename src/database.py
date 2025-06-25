@@ -1,13 +1,19 @@
+import os
 from sqlalchemy.orm import declarative_base
 from sqlalchemy.orm import sessionmaker
 from src.models import Base as BaseModel
 from sqlalchemy import create_engine
+from dotenv import load_dotenv
+
+load_dotenv()
+
+database_path = os.getenv('DATABASE_PATH')
 
 def engine():
     """
         Connexion à la base de donnée dev
     """
-    return create_engine("sqlite:///user.db", echo=True)
+    return create_engine("sqlite:///" +  database_path, echo=True)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine())
 

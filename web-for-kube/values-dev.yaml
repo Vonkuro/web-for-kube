@@ -1,0 +1,7 @@
+namespace: dev
+requests:
+  cpu: 1
+  memory: 800Mi
+limits:
+  cpu: 1
+  memory: 800Mi

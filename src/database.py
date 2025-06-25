@@ -13,7 +13,7 @@ def engine():
     """
         Connexion à la base de donnée dev
     """
-    return create_engine("sqlite:///" +  database_path, echo=True)
+    return create_engine("sqlite:///" +  database_path + "user.db", echo=True)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine())
 

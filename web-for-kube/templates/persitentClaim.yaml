@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-    name: sqliteClaim
+    name: {{ .Values.namespace }}-sqlite-claim
 spec:
     accessModes:
         - ReadWriteOnce

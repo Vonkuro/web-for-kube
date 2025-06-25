@@ -9,6 +9,9 @@ from typing import List
 
 app = FastAPI()
 
+@app.get("/")
+async def hello():
+    return {"Hello": "World"}
 
 @app.post("/create-database")
 async def create_database():

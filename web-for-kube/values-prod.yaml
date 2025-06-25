@@ -1,7 +1,16 @@
 namespace: prod
 requests:
-  cpu: 2
-  memory: 800Mi
+  cpu: "3"
+  memory: "3Gi"
 limits:
-  cpu: 2
-  memory: 800Mi
+  cpu: "3"
+  memory: "3Gi"
+  max:
+    storage: "3Gi"
+  defaultRequest:
+    storage: "3Gi"
+datapath: "/app/data/prod"
+volumes: 
+- name: my-sqlite
+  persistentVolumeClaim:
+    claimName: prod-sqlite-claim

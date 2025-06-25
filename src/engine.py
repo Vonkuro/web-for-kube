@@ -1,3 +1,3 @@
 from sqlalchemy import create_engine
 
-engine = create_engine("sqlite://", echo=True)
+engine = create_engine("sqlite://database/user.db", echo=True)

@@ -1,5 +1,10 @@
 # web-for-kube
-
+# Collaborators
+EPSI I2 Groupe B
+- Ikhlas BELAZIZ
+- Denis JONGMANEE
+- Rémi PETIT
+- Gaëtan TIBERGHIEN
 # Architecture
 ## Dev
 ![Dev Architecture](assets/architecture-dev.jpg)

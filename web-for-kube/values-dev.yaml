@@ -1,0 +1,16 @@
+namespace: dev
+requests:
+  cpu: "2"
+  memory: "2Gi"
+limits:
+  cpu: "2"
+  memory: "2Gi"
+  max:
+    storage: "2Gi"
+  defaultRequest:
+    storage: "2Gi"
+datapath: "/app/data/dev"
+volumes: 
+- name: my-sqlite
+  persistentVolumeClaim:
+    claimName: dev-sqlite-claim
